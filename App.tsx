@@ -1,12 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { Card, View } from "react-native-ui-lib";
-import { KillPlayerButton } from "./components/KillCharacterButton";
-import { ToggleMusicButton } from "./components/ToggleMusicButton";
+import { KillPlayerButton } from "./app/actions/KillCharacterButton";
+import { ToggleMusicButton } from "./app/actions/ToggleMusicButton";
 import { ExpandableUtilities } from "./components/ExpandableSection";
-import { GameState } from "./app/game-state/GameState";
-import { useGameState } from "./app/game-state/useGameState";
-import { AddKeysButton } from "./components/AddKeysButton";
-import { DeleteKeysButton } from "./components/DeleteKeysButton";
+import { GameState } from "./app/gameState/GameState";
+import { useGameState } from "./app/gameState/useGameState";
+import { AddKeysButton } from "./app/actions/AddKeysButton";
+import { DeleteKeysButton } from "./app/actions/DeleteKeysButton";
 
 export default function App() {
   const gameState = useGameState();

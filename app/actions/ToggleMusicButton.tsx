@@ -1,4 +1,4 @@
-import { toggleMusicRequest } from "../app/game-service/game-service";
+import { toggleMusicRequest } from "../gameService/gameService";
 import { ActionButton } from "./ActionButton";
 
 export const ToggleMusicButton = () => {

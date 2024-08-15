@@ -1,19 +1,12 @@
 import { ExpandableSection, Text, View } from "react-native-ui-lib";
 import { useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
+import { ToggleableChevron } from "./ToggleableChevron";
 
 interface ExpandableUtilitiesProps {
   children: JSX.Element;
   name: string;
 }
-
-export const ToggleableChevron = ({ isExpanded }: { isExpanded: boolean }) => {
-  return isExpanded ? (
-    <FontAwesome name="chevron-circle-up" size={14} />
-  ) : (
-    <FontAwesome name="chevron-circle-down" size={14} />
-  );
-};
 
 export const ExpandableUtilities = ({
   children,

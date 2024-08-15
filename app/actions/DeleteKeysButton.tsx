@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteKeys } from "../app/game-service/game-service";
+import { deleteKeys } from "../gameService/gameService";
 import { ActionButton } from "./ActionButton";
 
 export const DeleteKeysButton = () => {

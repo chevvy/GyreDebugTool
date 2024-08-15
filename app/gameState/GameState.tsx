@@ -1,6 +1,6 @@
 import { Card, Text, View } from "react-native-ui-lib";
 import { Information } from "./Information";
-import { GameStateData } from "../game-service/game-service";
+import { GameStateData } from "../gameService/gameService";
 import { FontAwesome } from "@expo/vector-icons";
 
 interface GameStateProps {

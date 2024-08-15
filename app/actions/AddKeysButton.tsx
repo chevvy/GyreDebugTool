@@ -1,5 +1,5 @@
 import React from "react";
-import { addKeys } from "../app/game-service/game-service";
+import { addKeys } from "../gameService/gameService";
 import { ActionButton } from "./ActionButton";
 
 export const AddKeysButton = () => {
