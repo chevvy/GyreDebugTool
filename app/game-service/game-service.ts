@@ -12,18 +12,18 @@ export function toggleMusicRequest(): Promise<void> {
   );
 }
 
-export interface GameStateRequestData {
+interface GameStateRequestData {
   isMusicPlaying: boolean;
   keysQuantity: number;
 }
+export type GameStateData = GameStateRequestData | null;
 
-export function GameStateRequest(): Promise<GameStateRequestData> {
+export async function GameStateRequest(): Promise<GameStateData> {
   // TODO add error state and banner
   return fetch(configService.gameStateUrl)
-    .then((x: Response) => x.json())
-    .then((y) => {
-      return y;
-    });
+    .then((res: Response) => res.json())
+    .then((gameState: GameStateData) => gameState)
+    .catch(() => null);
 }
 
 export function addKeys(): Promise<void> {

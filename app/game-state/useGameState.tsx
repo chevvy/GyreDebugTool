@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
-import {
-  GameStateRequestData,
-  GameStateRequest,
-} from "../game-service/game-service";
+import { GameStateData, GameStateRequest } from "../game-service/game-service";
 
-export const useGameState = (): GameStateRequestData => {
+export const useGameState = (): GameStateData => {
   // TODO don't use game state data type
-  const [gameState, setGameState] = useState<GameStateRequestData>({
-    isMusicPlaying: true,
-    keysQuantity: 0,
-  });
+  const [gameState, setGameState] = useState<GameStateData>(null);
   // TODO extract to custom hook
   useEffect(() => {
     const toggle = setInterval(() => {

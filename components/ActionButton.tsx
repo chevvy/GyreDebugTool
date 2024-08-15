@@ -10,10 +10,10 @@ interface ActionButtonProps {
 }
 
 export function ActionButton({ label, onPress, iconName }: ActionButtonProps) {
+  // TODO handle any
   return (
     <Button onPress={onPress} margin-10>
       <FontAwesome
-        // TODO handle any
         name={(iconName as any) ?? "times-circle"}
         size={24}
         style={styles.buttonIcon}

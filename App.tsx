@@ -10,6 +10,7 @@ import { DeleteKeysButton } from "./components/DeleteKeysButton";
 
 export default function App() {
   const gameState = useGameState();
+  // TODO Create utilities component
   return (
     <View flex marginV-30>
       <GameState gameState={gameState} />
