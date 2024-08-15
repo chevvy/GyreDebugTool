@@ -18,10 +18,10 @@ export interface GameStateRequestData {
 }
 
 export function GameStateRequest(): Promise<GameStateRequestData> {
+  // TODO add error state and banner
   return fetch(configService.gameStateUrl)
     .then((x: Response) => x.json())
     .then((y) => {
-      console.log("res : ", y);
       return y;
     });
 }
