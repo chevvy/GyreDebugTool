@@ -14,6 +14,7 @@ export function toggleMusicRequest(): Promise<void> {
 
 export interface GameStateRequestData {
   isMusicPlaying: boolean;
+  keysQuantity: number;
 }
 
 export function GameStateRequest(): Promise<GameStateRequestData> {

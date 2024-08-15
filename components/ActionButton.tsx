@@ -10,23 +10,16 @@ interface ActionButtonProps {
 
 export function ActionButton({ label, onPress }: ActionButtonProps) {
   return (
-    <View
-      style={[
-        styles.buttonContainer,
-        { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 },
-      ]}
-    >
-      <Button onPress={onPress}>
-        <FontAwesome
-          name="times-circle"
-          size={24}
-          color="black"
-          style={styles.buttonIcon}
-        />
+    <Button onPress={onPress}>
+      <FontAwesome
+        name="times-circle"
+        size={24}
+        color="black"
+        style={styles.buttonIcon}
+      />
 
-        <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
-      </Button>
-    </View>
+      <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
+    </Button>
   );
 }
 
