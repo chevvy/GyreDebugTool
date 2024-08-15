@@ -1,6 +1,6 @@
 import React from "react";
 import { addKeys } from "../../gameService/gameService";
-import { ActionButton } from "../components/ActionButton";
+import { ActionButton } from "../components/button/ActionButton";
 import { ActionProps } from "../actions.type";
 
 export const AddKeysButton = (props: ActionProps) => {

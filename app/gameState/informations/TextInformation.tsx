@@ -5,7 +5,7 @@ interface Information {
   value: string;
 }
 
-export const Information = ({ name, value }: Information) => {
+export const TextInformation = ({ name, value }: Information) => {
   return (
     <View row>
       <Text underline text70M>

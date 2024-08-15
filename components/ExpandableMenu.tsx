@@ -2,15 +2,12 @@ import { ExpandableSection, Text, View } from "react-native-ui-lib";
 import { useState } from "react";
 import { ToggleableChevron } from "./ToggleableChevron";
 
-interface ExpandableUtilitiesProps {
+interface ExpandableMenuProps {
   children: JSX.Element;
   name: string;
 }
 
-export const ExpandableUtilities = ({
-  children,
-  name,
-}: ExpandableUtilitiesProps) => {
+export const ExpandableMenu = ({ children, name }: ExpandableMenuProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
     <ExpandableSection

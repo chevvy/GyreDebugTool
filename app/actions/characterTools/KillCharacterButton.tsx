@@ -1,5 +1,5 @@
 import React from "react";
-import { ActionButton } from "../components/ActionButton";
+import { ActionButton } from "../components/button/ActionButton";
 import { killPlayerRequest } from "../../gameService/gameService";
 import { ActionProps } from "../actions.type";
 

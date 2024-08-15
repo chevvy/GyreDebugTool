@@ -1,7 +1,8 @@
 import { configService } from "../../config/local";
+import { GameStateData, GameStateRequestData } from "./gameService.type";
 
 export function killPlayerRequest(): Promise<void> {
-  return fetch(configService.killCharacterUrl).then((x) =>
+  return fetch(configService.killCharacterUrl).then(() =>
     console.log("player killed")
   );
 }
@@ -12,17 +13,10 @@ export function toggleMusicRequest(): Promise<void> {
   );
 }
 
-interface GameStateRequestData {
-  isMusicPlaying: boolean;
-  keysQuantity: number;
-}
-export type GameStateData = GameStateRequestData | null;
-
 export async function GameStateRequest(): Promise<GameStateData> {
-  // TODO add error state and banner
   return fetch(configService.gameStateUrl)
     .then((res: Response) => res.json())
-    .then((gameState: GameStateData) => gameState)
+    .then((gameState: GameStateRequestData) => gameState)
     .catch(() => null);
 }
 

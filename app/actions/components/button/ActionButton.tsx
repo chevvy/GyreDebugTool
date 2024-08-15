@@ -1,14 +1,6 @@
 import { FontAwesome } from "@expo/vector-icons";
-import { StyleSheet } from "react-native";
-
-import { Button, Switch, Text, View } from "react-native-ui-lib";
-
-export interface ActionButtonProps {
-  label: string;
-  onPress: () => void;
-  iconName?: string;
-  disabled?: boolean;
-}
+import { Button, Text, View } from "react-native-ui-lib";
+import { ActionButtonProps } from "./actionButton.type";
 
 export function ActionButton({
   label,

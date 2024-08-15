@@ -1,7 +1,7 @@
 import { toggleMusicRequest } from "../../gameService/gameService";
-import { ActionButton } from "../components/ActionButton";
+import { ActionButton } from "../components/button/ActionButton";
 import { ActionProps } from "../actions.type";
-import { ActionSwitch } from "../components/ActionSwitch";
+import { ActionSwitch } from "../components/switch/ActionSwitch";
 
 interface ToggleMusicButtonProps extends ActionProps {
   value: boolean;

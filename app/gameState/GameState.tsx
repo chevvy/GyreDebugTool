@@ -1,10 +1,6 @@
 import { Card, Text, View } from "react-native-ui-lib";
-import { Information } from "./Information";
-import { GameStateData } from "../gameService/gameService";
-
-interface GameStateProps {
-  gameState: GameStateData;
-}
+import { TextInformation } from "./informations/TextInformation";
+import { GameStateProps } from "./gameState.type";
 
 const TITLE = "Gyre Debug Tool";
 
@@ -35,11 +31,11 @@ export const GameState = ({ gameState }: GameStateProps) => {
       </Text>
       <Card margin-10 padding-10>
         <Text text40BO>Game State</Text>
-        <Information
+        <TextInformation
           name="Is Music Playing"
           value={String(gameState.isMusicPlaying)}
         />
-        <Information name="Keys" value={String(gameState.keysQuantity)} />
+        <TextInformation name="Keys" value={String(gameState.keysQuantity)} />
       </Card>
     </View>
   );

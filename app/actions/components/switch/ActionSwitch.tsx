@@ -1,9 +1,6 @@
 import { View, Switch, Text } from "react-native-ui-lib";
-import { ActionButtonProps } from "./ActionButton";
+import { ActionSwitchProps } from "./actionSwitch.type";
 
-interface ActionSwitchProps extends ActionButtonProps {
-  value: boolean;
-}
 export function ActionSwitch({
   label,
   onPress,
