@@ -1,11 +1,20 @@
-import { ExpandableSection, Text } from "react-native-ui-lib";
-import { KillPlayerButton } from "./KillCharacterButton";
+import { ExpandableSection, Text, View } from "react-native-ui-lib";
 import { useState } from "react";
+import { FontAwesome } from "@expo/vector-icons";
 
 interface ExpandableUtilitiesProps {
   children: JSX.Element;
   name: string;
 }
+
+export const ToggleableChevron = ({ isExpanded }: { isExpanded: boolean }) => {
+  return isExpanded ? (
+    <FontAwesome name="chevron-circle-up" size={14} />
+  ) : (
+    <FontAwesome name="chevron-circle-down" size={14} />
+  );
+};
+
 export const ExpandableUtilities = ({
   children,
   name,
@@ -15,13 +24,18 @@ export const ExpandableUtilities = ({
     <ExpandableSection
       expanded={isExpanded}
       sectionHeader={
-        <Text grey10 text60>
-          {name}
-        </Text>
+        <View row centerV paddingV-5>
+          <Text grey10 text60>
+            {name}
+          </Text>
+          <View centerV centerH paddingH-10 paddingV-5>
+            <ToggleableChevron isExpanded={isExpanded} />
+          </View>
+        </View>
       }
       onPress={() => setIsExpanded(!isExpanded)}
     >
-      {children}
+      <View marginV-10>{children}</View>
     </ExpandableSection>
   );
 };

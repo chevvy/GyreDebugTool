@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
-import { ExpandableSection, Text, View } from "react-native-ui-lib";
+import { Card, ExpandableSection, Text, View } from "react-native-ui-lib";
 import { KillPlayerButton } from "./components/KillCharacterButton";
 import { ToggleMusicButton } from "./components/ToggleMusicButton";
 import { useEffect, useState } from "react";
@@ -22,14 +22,28 @@ export default function App() {
     GameStateRequest().then((state) => setGameState(state));
   }, []);
   return (
-    <View style={styles.container}>
-      <Text>Is music playing: {String(gameState.isMusicPlaying)}</Text>
-      <ExpandableUtilities name="Character tools">
-        <KillPlayerButton />
-      </ExpandableUtilities>
-      <ExpandableUtilities name="Sound Tools">
-        <ToggleMusicButton />
-      </ExpandableUtilities>
+    <View flex marginV-30>
+      <Text $textPrimary center marginV-20 text30BO>
+        Gyre Debug Tool
+      </Text>
+      <Card margin-10 padding-10>
+        <Text text40BO>Game State</Text>
+        <View row>
+          <Text underline text70M>
+            Is music playing
+          </Text>
+          <Text text70> : </Text>
+          <Text text70>{String(gameState.isMusicPlaying)}</Text>
+        </View>
+      </Card>
+      <Card margin-10 padding-10>
+        <ExpandableUtilities name="Character tools">
+          <KillPlayerButton />
+        </ExpandableUtilities>
+        <ExpandableUtilities name="Sound Tools">
+          <ToggleMusicButton />
+        </ExpandableUtilities>
+      </Card>
       <StatusBar style="auto" />
     </View>
   );
