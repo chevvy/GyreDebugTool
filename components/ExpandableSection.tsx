@@ -1,6 +1,5 @@
 import { ExpandableSection, Text, View } from "react-native-ui-lib";
 import { useState } from "react";
-import { FontAwesome } from "@expo/vector-icons";
 import { ToggleableChevron } from "./ToggleableChevron";
 
 interface ExpandableUtilitiesProps {
