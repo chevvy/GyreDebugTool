@@ -6,19 +6,20 @@ import { Button, Switch, Text, View } from "react-native-ui-lib";
 interface ActionButtonProps {
   label: string;
   onPress: () => void;
+  iconName?: string;
 }
 
-export function ActionButton({ label, onPress }: ActionButtonProps) {
+export function ActionButton({ label, onPress, iconName }: ActionButtonProps) {
   return (
     <Button onPress={onPress} margin-10>
       <FontAwesome
-        name="times-circle"
+        // TODO handle any
+        name={(iconName as any) ?? "times-circle"}
         size={24}
-        color="black"
         style={styles.buttonIcon}
       />
 
-      <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
+      <Text>{label}</Text>
     </Button>
   );
 }

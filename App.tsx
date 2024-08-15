@@ -6,6 +6,7 @@ import { ExpandableUtilities } from "./components/ExpandableSection";
 import { GameState } from "./app/game-state/GameState";
 import { useGameState } from "./app/game-state/useGameState";
 import { AddKeysButton } from "./components/AddKeysButton";
+import { DeleteKeysButton } from "./components/DeleteKeysButton";
 
 export default function App() {
   const gameState = useGameState();
@@ -17,6 +18,7 @@ export default function App() {
           <View>
             <KillPlayerButton />
             <AddKeysButton />
+            <DeleteKeysButton />
           </View>
         </ExpandableUtilities>
         <ExpandableUtilities name="Sound Tools">

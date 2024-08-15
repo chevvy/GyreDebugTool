@@ -27,7 +27,13 @@ export function GameStateRequest(): Promise<GameStateRequestData> {
 }
 
 export function addKeys(): Promise<void> {
-  return fetch(configService.addKeysUrl, { method: "post" }).then(() =>
+  return fetch(configService.keysUrl, { method: "post" }).then(() =>
     console.log("added keys")
+  );
+}
+
+export function deleteKeys(): Promise<void> {
+  return fetch(configService.keysUrl, { method: "delete" }).then(() =>
+    console.log("deleted keys")
   );
 }

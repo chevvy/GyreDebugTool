@@ -8,5 +8,5 @@ export const configService = {
   killCharacterUrl: getBaseUrl(),
   toggleMusicUrl: `${getBaseUrl()}/music`,
   gameStateUrl: `${getBaseUrl()}/state`,
-  addKeysUrl: `${getBaseUrl()}/keys`,
+  keysUrl: `${getBaseUrl()}/keys`,
 };
