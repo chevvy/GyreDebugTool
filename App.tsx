@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
+import { Text, View } from "react-native-ui-lib";
 import { KillPlayerButton } from "./components/KillCharacterButton";
 import { ToggleMusicButton } from "./components/ToggleMusicButton";
 import { useEffect, useState } from "react";
@@ -22,9 +23,7 @@ export default function App() {
   console.log("gamestate is ", gameState.isMusicPlaying);
   return (
     <View style={styles.container}>
-      <Text style={{ color: "#fff" }}>
-        Is music playing: {String(gameState.isMusicPlaying)}
-      </Text>
+      <Text>Is music playing: {String(gameState.isMusicPlaying)}</Text>
       <KillPlayerButton />
       <ToggleMusicButton />
       <StatusBar style="auto" />
@@ -35,7 +34,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
     alignItems: "center",
     justifyContent: "center",
   },

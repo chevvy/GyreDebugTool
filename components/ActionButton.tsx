@@ -1,5 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
-import { Pressable, StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { Pressable } from "react-native";
+import { Button, Text } from "react-native-ui-lib";
 
 interface ActionButtonProps {
   label: string;
@@ -14,10 +16,7 @@ export function ActionButton({ label, onPress }: ActionButtonProps) {
         { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 },
       ]}
     >
-      <Pressable
-        style={[styles.button, { backgroundColor: "#fff" }]}
-        onPress={onPress}
-      >
+      <Button onPress={onPress}>
         <FontAwesome
           name="times-circle"
           size={24}
@@ -26,7 +25,7 @@ export function ActionButton({ label, onPress }: ActionButtonProps) {
         />
 
         <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
-      </Pressable>
+      </Button>
     </View>
   );
 }
