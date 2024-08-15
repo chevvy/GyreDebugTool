@@ -1,7 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
-import { StyleSheet, View } from "react-native";
-import { Pressable } from "react-native";
-import { Button, Text } from "react-native-ui-lib";
+import { StyleSheet } from "react-native";
+
+import { Button, Switch, Text, View } from "react-native-ui-lib";
 
 interface ActionButtonProps {
   label: string;
@@ -20,6 +20,18 @@ export function ActionButton({ label, onPress }: ActionButtonProps) {
 
       <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
     </Button>
+  );
+}
+
+interface ActionSwitchProps extends ActionButtonProps {
+  value: boolean;
+}
+export function ActionSwitch({ label, onPress, value }: ActionSwitchProps) {
+  return (
+    <View row>
+      <Text>{label}</Text>
+      <Switch value={value} onValueChange={onPress} />
+    </View>
   );
 }
 

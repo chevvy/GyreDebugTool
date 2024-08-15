@@ -6,21 +6,11 @@ import {
 import { Card, ExpandableSection, Text, View } from "react-native-ui-lib";
 import { Information } from "./Information";
 
-export const GameState = () => {
-  // TODO don't use game state data type
-  const [gameState, setGameState] = useState<GameStateRequestData>({
-    isMusicPlaying: true,
-    keysQuantity: 0,
-  });
-  // TODO extract to custom hook
-  useEffect(() => {
-    const toggle = setInterval(() => {
-      GameStateRequest().then((state) => setGameState(state));
-    }, 1000);
+interface GameStateProps {
+  gameState: GameStateRequestData;
+}
 
-    return () => clearInterval(toggle);
-  }, []);
-
+export const GameState = ({ gameState }: GameStateProps) => {
   return (
     <View>
       <Text $textPrimary center marginV-20 text30BO>

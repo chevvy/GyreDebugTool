@@ -4,11 +4,13 @@ import { KillPlayerButton } from "./components/KillCharacterButton";
 import { ToggleMusicButton } from "./components/ToggleMusicButton";
 import { ExpandableUtilities } from "./components/ExpandableSection";
 import { GameState } from "./app/game-state/GameState";
+import { useGameState } from "./app/game-state/useGameState";
 
 export default function App() {
+  const gameState = useGameState();
   return (
     <View flex marginV-30>
-      <GameState />
+      <GameState gameState={gameState} />
       <Card margin-10 padding-10>
         <ExpandableUtilities name="Character tools">
           <KillPlayerButton />
