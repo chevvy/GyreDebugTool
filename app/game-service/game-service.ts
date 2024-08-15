@@ -5,3 +5,9 @@ export function killPlayerRequest(): Promise<void> {
     console.log("player killed")
   );
 }
+
+export function toggleMusicRequest(): Promise<void> {
+  return fetch(configService.toggleMusicUrl, { method: "post" }).then(() =>
+    console.log("music toggled")
+  );
+}
