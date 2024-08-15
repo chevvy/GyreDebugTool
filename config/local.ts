@@ -7,4 +7,5 @@ const getBaseUrl = () => `${config.host}:${config.port}`;
 export const configService = {
   killCharacterUrl: getBaseUrl(),
   toggleMusicUrl: `${getBaseUrl()}/music`,
+  gameStateUrl: `${getBaseUrl()}/state`,
 };

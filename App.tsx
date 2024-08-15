@@ -2,10 +2,29 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { KillPlayerButton } from "./components/KillCharacterButton";
 import { ToggleMusicButton } from "./components/ToggleMusicButton";
+import { useEffect, useState } from "react";
+import {
+  GameStateRequest,
+  GameStateRequestData,
+} from "./app/game-service/game-service";
 
 export default function App() {
+  // TODO don't use game state data type
+  const [gameState, setGameState] = useState<GameStateRequestData>({
+    isMusicPlaying: true,
+  });
+  useEffect(() => {
+    GameStateRequest().then((x) => {
+      console.log("setting game state", x);
+      setGameState(x);
+    });
+  }, []);
+  console.log("gamestate is ", gameState.isMusicPlaying);
   return (
     <View style={styles.container}>
+      <Text style={{ color: "#fff" }}>
+        Is music playing: {String(gameState.isMusicPlaying)}
+      </Text>
       <KillPlayerButton />
       <ToggleMusicButton />
       <StatusBar style="auto" />
