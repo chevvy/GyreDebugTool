@@ -5,6 +5,7 @@ import { ToggleMusicButton } from "./components/ToggleMusicButton";
 import { ExpandableUtilities } from "./components/ExpandableSection";
 import { GameState } from "./app/game-state/GameState";
 import { useGameState } from "./app/game-state/useGameState";
+import { AddKeysButton } from "./components/AddKeysButton";
 
 export default function App() {
   const gameState = useGameState();
@@ -13,7 +14,10 @@ export default function App() {
       <GameState gameState={gameState} />
       <Card margin-10 padding-10>
         <ExpandableUtilities name="Character tools">
-          <KillPlayerButton />
+          <View>
+            <KillPlayerButton />
+            <AddKeysButton />
+          </View>
         </ExpandableUtilities>
         <ExpandableUtilities name="Sound Tools">
           <ToggleMusicButton />

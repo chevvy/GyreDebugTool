@@ -25,3 +25,9 @@ export function GameStateRequest(): Promise<GameStateRequestData> {
       return y;
     });
 }
+
+export function addKeys(): Promise<void> {
+  return fetch(configService.addKeysUrl, { method: "post" }).then(() =>
+    console.log("added keys")
+  );
+}

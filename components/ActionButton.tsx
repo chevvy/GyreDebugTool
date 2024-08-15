@@ -10,7 +10,7 @@ interface ActionButtonProps {
 
 export function ActionButton({ label, onPress }: ActionButtonProps) {
   return (
-    <Button onPress={onPress}>
+    <Button onPress={onPress} margin-10>
       <FontAwesome
         name="times-circle"
         size={24}
