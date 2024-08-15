@@ -1,7 +1,7 @@
 import React from "react";
-import { addKeys } from "../gameService/gameService";
-import { ActionButton } from "./ActionButton";
-import { ActionProps } from "./actions.type";
+import { addKeys } from "../../gameService/gameService";
+import { ActionButton } from "../components/ActionButton";
+import { ActionProps } from "../actions.type";
 
 export const AddKeysButton = (props: ActionProps) => {
   return (

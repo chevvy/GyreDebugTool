@@ -1,9 +1,9 @@
 import { Card, View } from "react-native-ui-lib";
 import { ExpandableUtilities } from "../../components/ExpandableSection";
-import { AddKeysButton } from "./AddKeysButton";
-import { DeleteKeysButton } from "./DeleteKeysButton";
-import { KillPlayerButton } from "./KillCharacterButton";
-import { ToggleMusicButton } from "./ToggleMusicButton";
+import { AddKeysButton } from "./characterTools/AddKeysButton";
+import { DeleteKeysButton } from "./characterTools/DeleteKeysButton";
+import { KillPlayerButton } from "./characterTools/KillCharacterButton";
+import { ToggleMusicButton } from "./soundTools/ToggleMusicButton";
 import { GameStateData } from "../gameService/gameService";
 
 interface ActionsMenuProps {
@@ -15,7 +15,7 @@ export const ActionsMenu = ({ gameState }: ActionsMenuProps) => {
   return (
     <View>
       <Card margin-10 padding-10>
-        <ExpandableUtilities name="Character tools">
+        <ExpandableUtilities name="Character Tools">
           <View>
             <KillPlayerButton {...props} />
             <AddKeysButton {...props} />
@@ -23,7 +23,7 @@ export const ActionsMenu = ({ gameState }: ActionsMenuProps) => {
           </View>
         </ExpandableUtilities>
         <ExpandableUtilities name="Sound Tools">
-          <ToggleMusicButton {...props} />
+          <ToggleMusicButton {...props} value={gameState?.isMusicPlaying} />
         </ExpandableUtilities>
       </Card>
     </View>

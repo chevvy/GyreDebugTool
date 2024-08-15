@@ -1,7 +1,6 @@
 import { Card, Text, View } from "react-native-ui-lib";
 import { Information } from "./Information";
 import { GameStateData } from "../gameService/gameService";
-import { FontAwesome } from "@expo/vector-icons";
 
 interface GameStateProps {
   gameState: GameStateData;
@@ -21,6 +20,10 @@ export const GameState = ({ gameState }: GameStateProps) => {
         <Text $textNeutral center marginV-20 text30BO>
           {TITLE}
         </Text>
+        <Card margin-10 padding-10>
+          <Text text40BO>Game State</Text>
+          <Text>No game state informations available while not connected</Text>
+        </Card>
       </View>
     );
   }
